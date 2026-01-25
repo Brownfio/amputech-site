@@ -1,65 +1,320 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const services = [
+  {
+    title: "Product Development",
+    description:
+      "From concept to prototype to production—engineering support focused on reliability, manufacturability, and performance.",
+  },
+  {
+    title: "Systems Integration",
+    description:
+      "Integrate hardware, software, and workflows into a cohesive system with clear documentation and maintainable architecture.",
+  },
+  {
+    title: "Technical Consulting",
+    description:
+      "Practical guidance on design tradeoffs, validation, compliance readiness, and scaling from pilot to full deployment.",
+  },
+];
+
+const featuredProducts = [
+  {
+    name: "AmpuTech Platform (Preview)",
+    description:
+      "A modular foundation for productized solutions—designed for extensibility, performance, and real-world operations.",
+    href: "/products",
+  },
+  {
+    name: "Data + Workflow Toolkit (Preview)",
+    description:
+      "Streamline intake, triage, and operational workflows with measurable visibility and repeatable processes.",
+    href: "/products",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Amputech delivered a clear plan, rapid iteration, and clean execution. Communication was disciplined and outcomes were measurable.",
+    name: "Operations Lead",
+    company: "Mid-market organization",
+  },
+  {
+    quote:
+      "Professional, responsive, and detail-oriented. The work product was production-ready and easy to maintain.",
+    name: "Technical Stakeholder",
+    company: "Services partner",
+  },
+];
+
+const differentiators = [
+  {
+    title: "Execution-First",
+    description:
+      "We focus on shippable outcomes and operational readiness—not just slide decks.",
+  },
+  {
+    title: "Engineering Discipline",
+    description:
+      "Versioned decisions, documented tradeoffs, and pragmatic design choices you can defend.",
+  },
+  {
+    title: "Performance & Reliability",
+    description:
+      "Speed, stability, and maintainability are treated as requirements, not afterthoughts.",
+  },
+  {
+    title: "Clarity for Non-Technical Teams",
+    description:
+      "We translate complexity into decisions, timelines, and deliverables that stakeholders understand.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="bg-white">
+      {/* HERO */}
+      <section className="border-b bg-gradient-to-b from-gray-50 to-white">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-medium text-gray-600">
+              Advanced Technology Solutions
+            </p>
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-gray-900 md:text-5xl">
+              Build reliable products and systems that perform in the real world.
+            </h1>
+            <p className="mt-5 text-lg leading-8 text-gray-600">
+              Amputech delivers engineering-led services and product solutions
+              with a focus on clarity, speed, and operational readiness.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center justify-center rounded-md bg-gray-900 px-5 text-sm font-medium text-white hover:bg-gray-800"
+              >
+                Request Consultation
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex h-11 items-center justify-center rounded-md border border-gray-200 px-5 text-sm font-medium text-gray-900 hover:bg-gray-50"
+              >
+                Explore Services
+              </Link>
+            </div>
+          </div>
+
+          {/* QUICK STATS */}
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            <Stat label="Delivery" value="Fast iterations" />
+            <Stat label="Quality" value="Production-ready output" />
+            <Stat label="Approach" value="Documented decisions" />
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES PREVIEW */}
+      <section className="py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+                Services
+              </h2>
+              <p className="mt-2 text-gray-600">
+                Engineering support that moves from problem to shipped solution.
+              </p>
+            </div>
+            <Link
+              href="/services"
+              className="hidden text-sm font-medium text-blue-600 hover:text-blue-700 md:inline"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              View all services →
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {services.map((s) => (
+              <div
+                key={s.title}
+                className="rounded-xl border border-gray-200 p-6 hover:shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-gray-900">{s.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-gray-600">
+                  {s.description}
+                </p>
+                <div className="mt-5">
+                  <Link
+                    href="/services"
+                    className="text-sm font-medium text-blue-600 hover:text-blue-700"
+                  >
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 md:hidden">
+            <Link
+              href="/services"
+              className="text-sm font-medium text-blue-600 hover:text-blue-700"
             >
-              Learning
-            </a>{" "}
-            center.
+              View all services →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="border-y bg-gray-50 py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+            Why Amputech
+          </h2>
+          <p className="mt-2 text-gray-600">
+            Practical engineering, strong communication, and outcomes you can
+            stand behind.
           </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {differentiators.map((d) => (
+              <div
+                key={d.title}
+                className="rounded-xl border border-gray-200 bg-white p-6"
+              >
+                <h3 className="font-semibold text-gray-900">{d.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-gray-600">
+                  {d.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* FEATURED PRODUCTS */}
+      <section className="py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+                Featured Products
+              </h2>
+              <p className="mt-2 text-gray-600">
+                Productized offerings designed to scale and stay maintainable.
+              </p>
+            </div>
+            <Link
+              href="/products"
+              className="hidden text-sm font-medium text-blue-600 hover:text-blue-700 md:inline"
+            >
+              View products →
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {featuredProducts.map((p) => (
+              <div
+                key={p.name}
+                className="rounded-xl border border-gray-200 p-6 hover:shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-gray-900">{p.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-gray-600">
+                  {p.description}
+                </p>
+                <div className="mt-5">
+                  <Link
+                    href={p.href}
+                    className="text-sm font-medium text-blue-600 hover:text-blue-700"
+                  >
+                    Explore →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 md:hidden">
+            <Link
+              href="/products"
+              className="text-sm font-medium text-blue-600 hover:text-blue-700"
+            >
+              View products →
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="border-t bg-gray-50 py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+            What partners say
+          </h2>
+          <p className="mt-2 text-gray-600">
+            Placeholder testimonials until you provide real quotes.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {testimonials.map((t, i) => (
+              <figure
+                key={i}
+                className="rounded-xl border border-gray-200 bg-white p-6"
+              >
+                <blockquote className="text-sm leading-6 text-gray-700">
+                  “{t.quote}”
+                </blockquote>
+                <figcaption className="mt-4 text-sm font-medium text-gray-900">
+                  {t.name} <span className="text-gray-500">— {t.company}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 md:p-10">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+                  Ready to discuss your project?
+                </h2>
+                <p className="mt-2 text-gray-600">
+                  Share your goals, constraints, and timeline. We’ll respond with
+                  clear next steps.
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex h-11 items-center justify-center rounded-md bg-gray-900 px-5 text-sm font-medium text-white hover:bg-gray-800"
+                >
+                  Contact Amputech
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex h-11 items-center justify-center rounded-md border border-gray-200 px-5 text-sm font-medium text-gray-900 hover:bg-gray-50"
+                >
+                  Services
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white p-5">
+      <div className="text-sm text-gray-600">{label}</div>
+      <div className="mt-1 text-base font-semibold text-gray-900">{value}</div>
     </div>
   );
 }
