@@ -4,18 +4,18 @@ const services = [
   {
     title: "Product Development",
     description:
-      "From concept to prototype to production—engineering support focused on reliability, manufacturability, and performance.",
+      "From concept to prototype to production—engineering support focused on reliability, manufacturability, and performance."
   },
   {
     title: "Systems Integration",
     description:
-      "Integrate hardware, software, and workflows into a cohesive system with clear documentation and maintainable architecture.",
+      "Integrate hardware, software, and workflows into a cohesive system with clear documentation and maintainable architecture."
   },
   {
     title: "Technical Consulting",
     description:
-      "Practical guidance on design tradeoffs, validation, compliance readiness, and scaling from pilot to full deployment.",
-  },
+      "Practical guidance on design tradeoffs, validation, compliance readiness, and scaling from pilot to full deployment."
+  }
 ];
 
 const featuredProducts = [
@@ -23,52 +23,46 @@ const featuredProducts = [
     name: "Adaptive Comfort Liner",
     description:
       "A modular prosthetic liner engineered for day-long comfort, adjustable fit, and easy maintenance. Ideal for active users.",
-    href: "/products/adaptive-comfort-liner",
+    href: "/products/adaptive-comfort-liner"
   },
   {
     name: "Smart Socket Adapter",
     description:
       "A compact adapter that enables sensor integration for socket alignment monitoring and simple connectivity to clinical tools.",
-    href: "/products/smart-socket-adapter",
-  },
+    href: "/products/smart-socket-adapter"
+  }
 ];
 
 const testimonials = [
   {
     quote:
-      "Amputech helped us reduce fitting time and improved patient comfort with practical, evidence-driven changes.",
-    name: "Dr. Sarah Lee",
-    company: "Beacon Prosthetics",
-  },
-  {
-    quote:
-      "Their technology-first approach opened remote care options and made follow-up much simpler for our team.",
-    name: "Mark Johnson",
-    company: "MobilityFirst",
-  },
+      "Showering no longer has to be a balancing act with the shower safe foot, I'm able to have more independence.",
+    name: "Frank Jones",
+    company: ""
+  }
 ];
 
 const differentiators = [
   {
     title: "Execution-First",
     description:
-      "We focus on shippable outcomes and operational readiness—not just slide decks.",
+      "We focus on shippable outcomes and operational readiness—not just slide decks."
   },
   {
     title: "Engineering Discipline",
     description:
-      "Versioned decisions, documented tradeoffs, and pragmatic design choices you can defend.",
+      "Versioned decisions, documented tradeoffs, and pragmatic design choices you can defend."
   },
   {
     title: "Performance & Reliability",
     description:
-      "Speed, stability, and maintainability are treated as requirements, not afterthoughts.",
+      "Speed, stability, and maintainability are treated as requirements, not afterthoughts."
   },
   {
     title: "Clarity for Non-Technical Teams",
     description:
-      "We translate complexity into decisions, timelines, and deliverables that stakeholders understand.",
-  },
+      "We translate complexity into decisions, timelines, and deliverables that stakeholders understand."
+  }
 ];
 
 export default function Home() {
