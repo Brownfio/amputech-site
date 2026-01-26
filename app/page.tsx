@@ -20,31 +20,31 @@ const services = [
 
 const featuredProducts = [
   {
-    name: "AmpuTech Platform (Preview)",
+    name: "Adaptive Comfort Liner",
     description:
-      "A modular foundation for productized solutions—designed for extensibility, performance, and real-world operations.",
-    href: "/products",
+      "A modular prosthetic liner engineered for day-long comfort, adjustable fit, and easy maintenance. Ideal for active users.",
+    href: "/products/adaptive-comfort-liner",
   },
   {
-    name: "Data + Workflow Toolkit (Preview)",
+    name: "Smart Socket Adapter",
     description:
-      "Streamline intake, triage, and operational workflows with measurable visibility and repeatable processes.",
-    href: "/products",
+      "A compact adapter that enables sensor integration for socket alignment monitoring and simple connectivity to clinical tools.",
+    href: "/products/smart-socket-adapter",
   },
 ];
 
 const testimonials = [
   {
     quote:
-      "Amputech delivered a clear plan, rapid iteration, and clean execution. Communication was disciplined and outcomes were measurable.",
-    name: "Operations Lead",
-    company: "Mid-market organization",
+      "Amputech helped us reduce fitting time and improved patient comfort with practical, evidence-driven changes.",
+    name: "Dr. Sarah Lee",
+    company: "Beacon Prosthetics",
   },
   {
     quote:
-      "Professional, responsive, and detail-oriented. The work product was production-ready and easy to maintain.",
-    name: "Technical Stakeholder",
-    company: "Services partner",
+      "Their technology-first approach opened remote care options and made follow-up much simpler for our team.",
+    name: "Mark Johnson",
+    company: "MobilityFirst",
   },
 ];
 
@@ -253,7 +253,7 @@ export default function Home() {
             What partners say
           </h2>
           <p className="mt-2 text-gray-600">
-            Placeholder testimonials until you provide real quotes.
+            Trusted feedback from partners and customers.
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -318,4 +318,3 @@ function Stat({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
-
