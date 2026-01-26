@@ -81,13 +81,26 @@ export default function ContactPage() {
         <div className="rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Company info</h2>
           <div className="mt-3 text-sm leading-6 text-gray-600">
-            <p>Email: info@ampu.tech (placeholder)</p>
-            <p>Phone: (xxx) xxx-xxxx (placeholder)</p>
-            <p className="mt-3">Service area: U.S. (placeholder)</p>
+            <p>
+              Email: <a href="mailto:msimonetti@ampu.tech" className="text-blue-600 hover:underline">msimonetti@ampu.tech</a>
+            </p>
+            <p>
+              Phone: <a href="tel:+16198851390" className="text-blue-600 hover:underline">+1 (619) 885-1390</a>
+            </p>
+            <p className="mt-3">Service area: Chula Vista, CA</p>
           </div>
 
-          <div className="mt-6 rounded-lg border border-dashed border-gray-300 p-6 text-sm text-gray-500">
-            Map placeholder
+          <div className="mt-6 rounded-lg border border-dashed border-gray-300 p-0 overflow-hidden">
+            <iframe
+              title="Amputech service area — Chula Vista, CA"
+              width="100%"
+              height="280"
+              className="block"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Chula+Vista,+CA&output=embed"
+            />
           </div>
         </div>
       </div>
