@@ -103,6 +103,3 @@ export default function ContactPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Chula+Vista,+CA&output=embed"
-
-
-
