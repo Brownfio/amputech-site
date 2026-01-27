@@ -103,3 +103,34 @@ export default function ContactPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Chula+Vista,+CA&output=embed"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = "text",
+  required = false,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label className="text-sm font-medium text-gray-900">{label}</label>
+      <input
+        name={name}
+        type={type}
+        required={required}
+        className="mt-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-gray-900/10"
+      />
+    </div>
+  );
+}
